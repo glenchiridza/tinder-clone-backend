@@ -1,5 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
+import Cors from 'cors';
+
 import Cards from './dbCards.js';
 
 //ap config
@@ -8,6 +10,9 @@ const port = process.env.PORT || 3005
 const conn_url = "mongodb+srv://glenc:chiridza97@cluster0.uwfvp.mongodb.net/tinderdb?retryWrites=true&w=majority";
 
 //middleware
+
+app.use(express.json())
+app.use(Cors())
 
 
 //db config
@@ -30,7 +35,7 @@ app.post('/tinder/cards',(req,res) => {
 });
 
 app.get('/tinder/cards',(req,res) =>{
-    Cards.find(db_card,(err,data) =>{
+    Cards.find((err,data) =>{
         if(err){
             res.status(500).send(err);
         }else{
