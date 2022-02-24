@@ -7,7 +7,7 @@ import Cards from './dbCards.js';
 //ap config
 const app = express();
 const port = process.env.PORT || 3005
-const conn_url = "mongodb+srv://glenc:chiridza97@cluster0.uwfvp.mongodb.net/tinderdb?retryWrites=true&w=majority";
+const conn_url = "mongodb+srv://USERNAME:YOURPASS@cluster0.uwfvp.mongodb.net/YOURDBNAME?retryWrites=true&w=majority";
 
 //middleware
 
